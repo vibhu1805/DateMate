@@ -60,6 +60,11 @@ export default class FormDataComponent extends Component {
             <h1 className=" text-center "> Find Your True Love</h1>
         </div>
         <div className="parent ">
+           <form onSubmit={this.onSubmit} className="child">
+  <label>Name
+   <input type="text" placeholder="username" className="input"  />
+   </label>
+</form> 
             
         < form onSubmit={this.onSubmit} className="child ">
    <label>
@@ -71,7 +76,11 @@ export default class FormDataComponent extends Component {
    </label>
    
 </form>
-<form onSubmit={this.onSubmit} className="child">
+
+
+</div>
+<div className="parent">
+    <form onSubmit={this.onSubmit} className="child">
    <label>
        Looking for
        <select className="input">
@@ -80,9 +89,6 @@ export default class FormDataComponent extends Component {
        </select>
    </label>
 </form>
-
-</div>
-<div className="parent">
         < form onSubmit={this.onSubmit} className="child">
    <label>
        Branch
@@ -101,12 +107,7 @@ export default class FormDataComponent extends Component {
 
        </select>
    </label>
-</form>
-<form onSubmit={this.onSubmit} className="child">
-  <label>Name
-   <input type="text" placeholder="username" className="input"  />
-   </label>
-</form>
+   </form>
 <div className="parent">
         < form onSubmit={this.onSubmit}className="child">
    <label>
@@ -126,7 +127,13 @@ export default class FormDataComponent extends Component {
    </label>
 </form >
 <div className="parent">
-        < form onSubmit={this.onSubmit} className="child">
+       
+<form onSubmit={this.onSubmit} className="child">
+  <label>Crush Name
+   <input type="text" placeholder="username" className="input"/>
+   </label>
+</form>
+ < form onSubmit={this.onSubmit} className="child">
    <label>
        Crush Year
        <select className="input">
@@ -140,44 +147,7 @@ export default class FormDataComponent extends Component {
        </select>
    </label>
 </form>
-<form onSubmit={this.onSubmit} className="child">
-  <label>Crush Name
-   <input type="text" placeholder="username" className="input"/>
-   </label>
-</form>
-<div className="parent">
-        < form onSubmit={this.onSubmit} className="child">
-   <label>
-       Do you smoke or drink?
-       <select className="input">
-           <option value="1" >Yes</option >
-           <option value="2 ">No</option>
-           
 
-
-       </select>
-   </label>
-</form>
-<form onSubmit={this.onSubmit} className="child">
-  <label>Date of Birth
-   <input type="text" placeholder="username" className="input"/>
-   </label>
-</form>
-<div className="parent">
-        < form onSubmit={this.onSubmit} className="child">
-   <label>
-       Have you cheated before?
-       <select className="input">
-           <option value="1" >Yes</option >
-           <option value="2 ">No</option>
-       </select>
-   </label>
-</form>
-<form onSubmit={this.onSubmit} className="child">
-  <label>Are you shy?
-   <input type="text" placeholder="username" className="input"/>
-   </label>
-</form>
 <div className="parent">
         < form onSubmit={this.onSubmit} className="child">
    <label>
@@ -192,7 +162,7 @@ export default class FormDataComponent extends Component {
    </label>
 </form>
 <form onSubmit={this.onSubmit} className="child">
-  <label> Brief description of yourself?
+  <label> Message for your crush
    <input type="text" placeholder="username" className="input"/>
    </label>
 </form>
@@ -203,16 +173,13 @@ export default class FormDataComponent extends Component {
         </button></Link>
     </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 
         )
