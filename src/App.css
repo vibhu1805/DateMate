@@ -316,7 +316,8 @@ font-weight: lighter;
   padding:55px 0px;
 }
 .imgcontainer::before{
-  background-size: 100% 2700px; 
+  background-size: 100% 2600px; 
+  
   
 
   width:100%;
