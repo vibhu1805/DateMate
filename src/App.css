@@ -68,7 +68,7 @@ label {
 }
 label .input {
   display: block;
-  width: 100px;
+  width: 220px;
 }
 .parent {
   margin-top:0%;
@@ -111,7 +111,6 @@ label .input {
 }
 .imgcontainer {
   position: relative;
-  margin-top: 0%;
 }
 
 .imgcontainer::before {
@@ -119,7 +118,7 @@ label .input {
   background-image: url("./images/back.png");
   background-repeat: no-repeat;
 
-  background-size: 100% 630px;
+  background-size: 100% 1500px;
   position: absolute;
   top: 0;
   left: 0;
@@ -140,58 +139,71 @@ label .input {
 .x-3 {
   top: 1em;
 }
-.countdown-container {
-  margin: auto;
+.expired-notice {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid #ebebeb;
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+}
 
-  background-color: #fff;
+.expired-notice > span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: red;
+}
+
+.expired-notice > p {
+  font-size: 1.5rem;
+}
+
+.show-counter {
+  padding: 0.5rem;
+}
+.imgcontainer{
+  padding:50px 10px;
+}
+
+.show-counter .countdown-link {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.countdown-container h1{
-  font-family: "Public Sans",sans-serif !important;
-  font-weight: bold;
-}
-.imgcontainer h1{
-  font-weight: bold;
-  font-family: "Public Sans",sans-serif !important;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+  margin-top:5px;
+   color: #000;
+  text-decoration: none;
+  
 }
 
-.countdown-values {
+.show-counter .countdown {
+  line-height: 1.25rem;
+  padding: 0 0.75rem 0 0.75rem;
+  align-items: center;
   display: flex;
+  font-size: larger;
+  flex-direction: column;
+  color:#AA336A;
 }
 
-.big-text {
-  font-weight: bold;
-  font-size: 6.5rem;
-  line-height: 1;
-  margin: 10px;
+
+.show-counter .countdown.danger {
+  color:#FF5733;
 }
 
-.countdown-value {
-  width: 120px;
-  margin: 10px 20px;
-  text-align: center;
+.show-counter .countdown > p {
+  margin: 0;
 }
 
-.countdown-value span {
-  font-size: 1.3rem;
+.show-counter .countdown > span {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
-.days {
-  color: orange;
-}
-.hours {
-  color: rgb(215, 100, 119);
-}
-.minutes {
-  color: rgb(146, 50, 146);
-}
-.seconds {
-  color: rgb(52, 52, 88);
-}
 .steps {
   font-family: "Dancing Script", sans-serif !important;
 }
@@ -209,9 +221,7 @@ h1 span {
 }
 .container {
   position: relative;
-padding:170px 100px;
-margin-bottom: 0%;
-
+padding:35px 0px;
 
 
 }
@@ -221,11 +231,11 @@ margin-bottom: 0%;
   background-image: url("./images/last.png");
   background-repeat: no-repeat;
 
-  background-size:1000px 100% ;
+  background-size:100% 300px;
   position: absolute;
   top: 0;
   left: 0;
-  background-size: cover;
+  
    
   width:100%;
   height: 100%;
@@ -306,9 +316,17 @@ font-weight: lighter;
   padding:55px 0px;
 }
 .imgcontainer::before{
-  background-size: 100% 550px; 
+  background-size: 100% 2700px; 
+  
 
+  width:100%;
+  height:100%;
 }
+.imgcontainer{
+  position:relative;
+  padding:20px 0px;
+}
+
 
   
 
