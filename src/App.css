@@ -1,38 +1,317 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Marcellus");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, "playlist-script", "Marcellus" !important;
+  overflow-x: hidden;
+}
+.navbar,
+.navbar-default {
+  background-image: linear-gradient(
+    to bottom,
+    #e7426b 0,
+    #e7426b 100%
+  ) !important; /* override background image gradient w/ flat color */
+}
+.navbar-brand {
+  font-family: "Marcellus", sans-serif;
+  color: white;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: white;
+}
+.family {
+  font-famiy: "Marcellus", sans-serif;
+}
+.family1 {
+  color: #fff;
+  font-family: "Marcellus", sans-serif;
+}
+
+.style {
+  background-image: url("./images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.style .img {
+  object-fit: contain;
+}
+.herosection {
+  background-color: #e7426b;
+}
+.button {
+  font-size: 17px;
+  font-family: "Source Sans Pro", sans-serif;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 6px 18px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  color: black;
+}
+
+.dis {
+  font-family: public sans;
+  font-weight: bold;
+  color: #213366;
+}
+label {
+  color: #213366;
+  font-family: "Public Sans",sans-serif !important;
+}
+label .input {
+  display: block;
+  width: 100px;
+}
+.parent {
+  margin-top:0%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.child {
+  
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.child1 {
+  padding: 1rem 1rem;
+  vertical-align: middle;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.child label {
+  color: #213366;
+  font-weight: bolder;
+}
+.input {
+  background-color: #e7426b;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+::placeholder {
+  color: white;
+  
+}
+.center {
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+.imgcontainer {
+  position: relative;
+  margin-top: 0%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.imgcontainer::before {
+  content: "";
+  background-image: url("./images/back.png");
+  background-repeat: no-repeat;
+
+  background-size: 100% 630px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  opacity: 1;
+  
+  z-index: -1;
+
+  /* Ensure the overlay is behind the content */
+}
+.btn-1 {
+  background-color: #e7426b;
+  color: white;
+  width: 60%;
+}
+.x-3 {
+  top: 1em;
+}
+.countdown-container {
+  margin: auto;
+
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.countdown-container h1{
+  font-family: "Public Sans",sans-serif !important;
+  font-weight: bold;
+}
+.imgcontainer h1{
+  font-weight: bold;
+  font-family: "Public Sans",sans-serif !important;
+}
+
+.countdown-values {
+  display: flex;
+}
+
+.big-text {
+  font-weight: bold;
+  font-size: 6.5rem;
+  line-height: 1;
+  margin: 10px;
+}
+
+.countdown-value {
+  width: 120px;
+  margin: 10px 20px;
+  text-align: center;
+}
+
+.countdown-value span {
+  font-size: 1.3rem;
+}
+
+.days {
+  color: orange;
+}
+.hours {
+  color: rgb(215, 100, 119);
+}
+.minutes {
+  color: rgb(146, 50, 146);
+}
+.seconds {
+  color: rgb(52, 52, 88);
+}
+.steps {
+  font-family: "Dancing Script", sans-serif !important;
+}
+h1 {
+  color: #213366;
+}
+h1 span {
+  color: #e7426b;
+}
+.center {
+  text-align: center;
+  list-style-position: inside;
+  color: #213366;
+  font-size: large;
+}
+.container {
+  position: relative;
+padding:170px 100px;
+margin-bottom: 0%;
+
+
+
+}
+
+.container::before {
+  content: "";
+  background-image: url("./images/last.png");
+  background-repeat: no-repeat;
+
+  background-size:1000px 100% ;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+   
+  width:100%;
+  height: 100%;
+  /* filter: brightness(0.5); */
+  opacity: 1;
+  /* Adjust the opacity value as needed */
+  z-index: -1;
+
+  /* Ensure the overlay is behind the content */
+}
+
+
+
+
+
+@media(max-width:680px) {
+  .herosection img{
+    display:flex;
+    flex:column;
+    margin-top: 90%;
   }
-  to {
-    transform: rotate(360deg);
+  .styles .family1 .family{
+    font-size:0.3rem;
+    margin-left: 50%;
   }
+  .family1{
+    font-size: 1rem;
+    margin-left:0px;
+  }
+  .herosection .button{
+    padding:6px 10px ;
+  }
+  
+  .style img {
+    width: 100%;
+    height:fit-content;
+    
+  }
+  
+
+  
+  select{
+    min-width: 1px;
+    
+  }
+  input{
+    min-width: 1px;
+  }
+  form{
+    min-width: fit-content;
+  }
+  
+  
+  .btn-1{ 
+  width:50%;
+  }
+  .countdown-values {
+  display: flex;
+  
+}
+
+.big-text {
+font-weight: lighter;
+  font-size: 2rem;
+  line-height: 1;
+  margin: 10px ;
+}
+
+.countdown-value {
+
+  width: 100%;
+  margin:10px 0%;
+  
+
+}
+.container{
+  position:relative;
+  padding:55px 0px;
+}
+.imgcontainer::before{
+  background-size: 100% 550px; 
+
+}
+
+  
+
+
+  
 }
