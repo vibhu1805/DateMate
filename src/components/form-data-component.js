@@ -1,34 +1,48 @@
 import React, { Component } from 'react';
+import  { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 export default class FormDataComponent extends Component {
     userData;
     constructor(props) {
         super(props);
         this.onChangeName = this.onChangeName.bind(this);
-        this.onChangeEmail = this.onChangeEmail.bind(this);
-        this.onChangePhone = this.onChangePhone.bind(this);
+        this.onChangeInsta = this.onChangeInsta.bind(this);
+        this.onChangeCrush = this.onChangeCrush.bind(this);
+        this.onChangeMessage = this.onChangeMessage.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+
         this.state = {
             name: '',
-            phone: ''
+            instaid: '',
+            message:'',
+            crush:'',
+            
         }
     }
     // Form Events
     onChangeName(e) {
         this.setState({ name: e.target.value })
     }
-    onChangeEmail(e) {
-        this.setState({ email: e.target.value })
+    
+    onChangeInsta(e) {
+        this.setState({ instaid: e.target.value })
     }
-    onChangePhone(e) {
-        this.setState({ phone: e.target.value })
+    onChangeCrush(e) {
+        this.setState({ crush: e.target.value })
     }
+    onChangeMessage(e) {
+        this.setState({ message: e.target.value })
+    }
+    
     onSubmit(e) {
+        this.userData = JSON.parse(localStorage.getItem('user'));
         e.preventDefault()
         this.setState({
             name: '',
-            email: '',
-            phone: ''
+            instaid: '',
+            crush:'',
+            message:'',
+            
         })
     }
     // React Life Cycle
@@ -37,20 +51,30 @@ export default class FormDataComponent extends Component {
         if (localStorage.getItem('user')) {
             this.setState({
                 name: this.userData.name,
-                email: this.userData.email,
-                phone: this.userData.phone
+                instaid: this.userData.instaid,
+                crush: this.userData.crush,
+                message: this.userData.message,
+                
             })
-        } else {
+        } 
+         else {
             this.setState({
                 name: '',
-                email: '',
-                phone: ''
+                instaid: '',
+                crush:'',
+                message:'',
+                
             })
         }
+       
     }
+
+    
     componentWillUpdate(nextProps, nextState) {
         localStorage.setItem('user', JSON.stringify(nextState));
     }
+    
+    
     render() {
         return (
             
@@ -60,36 +84,36 @@ export default class FormDataComponent extends Component {
             <h1 className=" text-center "> Find Your True Love</h1>
         </div>
         <div className="parent ">
-           <form onSubmit={this.onSubmit} className="child">
+           <form onSubmit={this.onSubmit} className="child1">
   <label>Name
-   <input type="text" placeholder="username" className="input"  />
+   <input type="text" placeholder="username" className="input" value={this.state.name} onChange={this.onChangeName}  />
    </label>
-</form> 
+
             
-        < form onSubmit={this.onSubmit} className="child ">
+        < div className="child form-group">
    <label>
        I am a
-       <select className="input">
-           <option value="1">Male</option >
+       <select className="input" >
+           <option value="1" >Male </option >
            <option value="2 ">Female</option>
        </select>
    </label>
+   </div>
    
-</form>
 
 
-</div>
-<div className="parent">
-    <form onSubmit={this.onSubmit} className="child">
+
+
+    <div  className="child form-group">
    <label>
        Looking for
-       <select className="input">
+       <select className="input" >
            <option value="1">Female</option>
            <option value="2">Male</option>
        </select>
    </label>
-</form>
-        < form onSubmit={this.onSubmit} className="child">
+</div>
+        < div className="child form-group">
    <label>
        Branch
        <select className="input">
@@ -107,9 +131,8 @@ export default class FormDataComponent extends Component {
 
        </select>
    </label>
-   </form>
-<div className="parent">
-        < form onSubmit={this.onSubmit}className="child">
+   </div>
+        < div className="child form-group">
    <label>
        Year
        <select className="input">
@@ -120,20 +143,19 @@ export default class FormDataComponent extends Component {
 
        </select>
    </label>
-</form>
-<form onSubmit={this.onSubmit} className="child">
+</div>
+<div className="child form-group">
   <label>insta-id
-   <input type="text" placeholder="username" className="input"/>
+   <input type="text" placeholder="username" className="input" value={this.state.instaid} onChange={this.onChangeInsta}/>
    </label>
-</form >
-<div className="parent">
+</div>
        
-<form onSubmit={this.onSubmit} className="child">
+<div className="child form-group">
   <label>Crush Name
-   <input type="text" placeholder="username" className="input"/>
+   <input type="text" placeholder="username" className="input" value={this.state.crush} onChange={this.onChangeCrush}/>
    </label>
-</form>
- < form onSubmit={this.onSubmit} className="child">
+</div>
+ < div className="child form-group">
    <label>
        Crush Year
        <select className="input">
@@ -146,10 +168,9 @@ export default class FormDataComponent extends Component {
 
        </select>
    </label>
-</form>
+</div>
 
-<div className="parent">
-        < form onSubmit={this.onSubmit} className="child">
+        < div className="child form-group">
    <label>
        Are you willing to go on dates?
        <select className="input">
@@ -160,25 +181,26 @@ export default class FormDataComponent extends Component {
 
        </select>
    </label>
-</form>
-<form onSubmit={this.onSubmit} className="child">
+</div>
+<div className="child form-group">
   <label> Message for your crush
-   <input type="text" placeholder="username" className="input"/>
+   <input type="text" placeholder="username" className="input" value={this.state.message} onChange={this.onChangeMessage}/>
    </label>
-</form>
-<div className="parent">
-    <div className="child1">
-    <Link to="/">   <button type="button" className="btn-1" >
+</div>
+
+      <button type="submit" className="btn-1" >
             Find Your Partner
-        </button></Link>
+        </button>
+    </form>
     </div>
+
+
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+
+
 
 
 

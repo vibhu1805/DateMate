@@ -86,6 +86,7 @@ label .input {
 .child1 {
   padding: 1rem 1rem;
   vertical-align: middle;
+  display: inline-block;
 
 }
 
@@ -326,7 +327,7 @@ font-weight: lighter;
   padding:55px 0px;
 }
 .imgcontainer::before{
-  background-size: 100% 1900px; 
+  background-size: 100% 1830px; 
   
   
 
