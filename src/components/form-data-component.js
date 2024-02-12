@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import  { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 export default class FormDataComponent extends Component {
     userData;
     constructor(props) {
@@ -35,8 +35,9 @@ export default class FormDataComponent extends Component {
     }
     
     onSubmit(e) {
-        this.userData = JSON.parse(localStorage.getItem('user'));
         e.preventDefault()
+        this.userData = JSON.parse(localStorage.getItem('user'));
+       
         this.setState({
             name: '',
             instaid: '',
@@ -70,9 +71,16 @@ export default class FormDataComponent extends Component {
     }
 
     
-    componentWillUpdate(nextProps, nextState) {
+componentWillUpdate(nextProps, nextState) {
         localStorage.setItem('user', JSON.stringify(nextState));
     }
+    
+onSubmit(e) {
+        e.preventDefault()
+        console.log(this.state.props)
+    }
+    
+
     
     
     render() {
@@ -85,9 +93,11 @@ export default class FormDataComponent extends Component {
         </div>
         <div className="parent ">
            <form onSubmit={this.onSubmit} className="child1">
+            <div className="form-group">
   <label>Name
-   <input type="text" placeholder="username" className="input" value={this.state.name} onChange={this.onChangeName}  />
+   <input type="text" placeholder="username" className="input form-control" value={this.state.name} onChange={this.onChangeName}  />
    </label>
+   </div>
 
             
         < div className="child form-group">
@@ -146,13 +156,13 @@ export default class FormDataComponent extends Component {
 </div>
 <div className="child form-group">
   <label>insta-id
-   <input type="text" placeholder="username" className="input" value={this.state.instaid} onChange={this.onChangeInsta}/>
+   <input type="text" placeholder="username" className="input form-control" value={this.state.instaid} onChange={this.onChangeInsta}/>
    </label>
 </div>
        
 <div className="child form-group">
   <label>Crush Name
-   <input type="text" placeholder="username" className="input" value={this.state.crush} onChange={this.onChangeCrush}/>
+   <input type="text" placeholder="username" className="input form-control" value={this.state.crush} onChange={this.onChangeCrush}/>
    </label>
 </div>
  < div className="child form-group">
@@ -184,7 +194,7 @@ export default class FormDataComponent extends Component {
 </div>
 <div className="child form-group">
   <label> Message for your crush
-   <input type="text" placeholder="username" className="input" value={this.state.message} onChange={this.onChangeMessage}/>
+   <input type="text" placeholder="username" className="input form-control" value={this.state.message} onChange={this.onChangeMessage}/>
    </label>
 </div>
 
