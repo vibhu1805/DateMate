@@ -1,18 +1,13 @@
-import React, { Component } from "react";
-import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import Find from "../components/form-data-component";
-import Countdown from "../components/Countdown";
-import Steps from "../components/Steps";
+import React from "react";
+import Landing from "../components/Landing";
+import Bestpart from "../components/Bestpart";
+
 const Home=()=> {
     return (
         <div>
-            <Navbar/>
-            <HeroSection/>
-            <Find/>
+            <Landing/>
+            <Bestpart/>
             
-            <Countdown/>
-            <Steps/>
             
             
         </div>

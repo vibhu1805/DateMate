@@ -1,7 +1,7 @@
 
 import { Link, useLocation } from "react-router-dom";
 import "../App.css";
-
+import brain from "../images/brain.png"
 
 
 
@@ -18,7 +18,8 @@ const Navbar = () => {
      
       <div className="container-fluid text-center">
         <Link className="navbar-brand" href="/">
-          DateMate
+                     <img src={brain} className="card-img-top im2" alt="..." />
+
         </Link>
         <button
           className="navbar-toggler"
@@ -41,7 +42,7 @@ const Navbar = () => {
                   location.pathname === "/" ? "active" : ""
                 }`}
                 aria-current="page"
-                to="/"
+                to="/Student"
               >
                 Home
               </Link>
@@ -53,9 +54,9 @@ const Navbar = () => {
                   location.pathname === "/" ? "active" : ""
                 }`}
                 aria-current="page"
-                to="/"
+                to="/Student/Attendance"
               >
-                About
+                Attendance
               </Link>
             </li>
             
@@ -65,9 +66,21 @@ const Navbar = () => {
                   location.pathname === "/" ? "active" : ""
                 }`}
                 aria-current="page"
-                to="/"
+                to="/Student/Notice"
               >
-                Form
+                Notice
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/" ? "active" : ""
+                }`}
+                aria-current="page"
+                to="/Student/Profile"
+              >
+                Profile
               </Link>
             </li>
             </ul>
